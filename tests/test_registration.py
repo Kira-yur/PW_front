@@ -20,29 +20,3 @@ def test_registration_success(chromium_page: Page):
 
         dashbord_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
         expect(dashbord_title).to_be_visible()
-
-        chromium_page.context.storage_state(path='browser-stage.json')
-
-        chromium_page.wait_for_timeout(1000)
-
-        chromium_page.close()
-
-from playwright.sync_api import sync_playwright, Page, expect
-import pytest
-
-        chromium_page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
-
-        dashbord_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
-        expect(dashbord_title).to_be_visible()
-
-        chromium_page.wait_for_timeout(1000)
-
-
-    # with sync_playwright() as playwright:
-    #     browser = playwright.chromium.launch(headless=False)
-    #     context = browser.new_context(storage_state='browser-stage.json')
-    #     page = context.new_page()
-    #
-    #     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
-    #
-    #     page.wait_for_timeout(5000)
