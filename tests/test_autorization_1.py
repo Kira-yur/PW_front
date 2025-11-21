@@ -15,10 +15,10 @@ def test_successful_registration(chromium_page: Page):
         login_button = chromium_page.get_by_test_id('login-page-login-button')
         login_button.click()
 
-        dashbord_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
-        expect(dashbord_title).to_be_visible()
+        # dashbord_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
+        # expect(dashbord_title).to_be_visible()
 
-        # wrong_alert = chromium_page.get_by_test_id('login-page-wrong-email-or-password-alert')
-        # expect(wrong_alert).to_be_visible()
-        # expect(wrong_alert).to_have_text('Wrong email or password')
+        wrong_alert = chromium_page.get_by_test_id('login-page-wrong-email-or-password-alert')
+        expect(wrong_alert).to_be_visible()
+        expect(wrong_alert).to_have_text('Wrong email or password')
 
